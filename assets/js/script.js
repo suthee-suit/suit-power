@@ -10,23 +10,7 @@ const products = {
     9:{name:"สูท Business Navy Slim",price:3090,image:"assets/images/suit-business-navy.jpg",desc:"สูทสีน้ำเงินทรงสลิม เหมาะกับนักธุรกิจ"},
     10:{name:"สูท Royal Brown Premium",price:3390,image:"assets/images/suit-royal-brown.jpg",desc:"สูทน้ำตาลพรีเมียม เพิ่มความโดดเด่น"}
 };
-function requireLogin(){
 
-    const user = localStorage.getItem("currentUser");
-
-    if(!user){
-
-        // บอกว่าผู้ใช้กด buyNow
-        localStorage.setItem("pendingAction", "buyNow");
-
-        localStorage.setItem("redirectAfterLogin", window.location.href);
-
-        window.location.href = "login.html";
-        return false;
-    }
-
-    return true;
-}
 function getId(){
     const params=new URLSearchParams(window.location.search);
     return params.get("id");
@@ -48,8 +32,6 @@ function loadProduct(){
 
 function addToCart(){
 
-    if(!requireLogin()) return;
-
     const id = getId();
     const size = document.getElementById("sizeSelect").value;
     const qty = parseInt(document.getElementById("quantity").value);
@@ -70,9 +52,6 @@ function addToCart(){
 }
 
 function buyNow(){
-
-    // 1️⃣ ตรวจสอบ Login
-    if(!requireLogin()) return;
 
     const id = getId();
 
