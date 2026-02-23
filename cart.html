@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUIT POWER | ตะกร้าสินค้า</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+.cart-page{
+    max-width:1000px;
+    margin:60px auto;
+}
+
+.cart-title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:40px;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#f7f7f7;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cart-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.cart-left img{
+    width:120px;
+    border-radius:10px;
+}
+
+.cart-info h4{
+    margin:0 0 5px;
+}
+
+.quantity-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity-box button{
+    padding:5px 10px;
+    border:none;
+    background:#5b3a23;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.remove-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.cart-summary{
+    text-align:right;
+    margin-top:30px;
+}
+
+.checkout-btn{
+    margin-top:15px;
+    padding:12px 30px;
+    background:#5b3a23;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">SUIT POWER</div>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="shop.html">สินค้า</a>
+        <a href="about.html">เกี่ยวกับเรา</a>
+        <a href="contact.html">ติดต่อ</a>
+        <a href="cart.html">ตะกร้า</a>
+    </nav>
+</header>
+
+<section class="cart-page">
+    <h2 class="cart-title">ตะกร้าสินค้า</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-summary">
+        <h3>ยอดรวมทั้งหมด: <span id="totalPrice">0</span> บาท</h3>
+        <button class="checkout-btn" onclick="checkoutAll()">ชำระเงินทั้งหมด</button>
+    </div>
+</section>
+
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

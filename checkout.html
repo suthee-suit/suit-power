@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ชำระเงิน | SUIT POWER</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <style>
+.confirm-btn{
+    margin-top:20px;
+    padding:15px 40px;
+    background:#5b3a23;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+.confirm-btn:hover{
+    background:#3e2616;
+}
+</style>
+
+<header class="navbar">
+    <div class="logo">SUIT POWER</div>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="shop.html">สินค้า</a>
+        <a href="about.html">เกี่ยวกับเรา</a>
+        <a href="contact.html">ติดต่อ</a>
+        <a href="cart.html">ตะกร้า</a>
+    </nav>
+</header>
+
+<section class="checkout-page">
+
+<div class="checkout-container">
+
+    <h2>สรุปคำสั่งซื้อ</h2>
+
+    <div id="orderSummary"></div>
+
+    <div class="total-box">
+        <h3>ยอดรวมสินค้า: <span id="subTotal">0</span> บาท</h3>
+        <h3>VAT 2%: <span id="vatAmount">0</span> บาท</h3>
+        <h2>ยอดชำระทั้งหมด: <span id="grandTotal">0</span> บาท</h2>
+    </div>
+
+    <hr>
+
+    <h2>ข้อมูลผู้สั่งซื้อ (กรุณากรอกข้อมูล)</h2>
+
+    <div class="form-grid">
+        <input type="text" id="fullname" placeholder="ชื่อ-นามสกุล" required>
+        <input type="tel" id="phone" placeholder="เบอร์โทรศัพท์" required>
+        <textarea id="address" placeholder="ที่อยู่สำหรับจัดส่ง" required></textarea>
+    </div>
+
+    <h2>เลือกช่องทางชำระเงิน</h2>
+
+    <div class="payment-options">
+        <label>
+            <input type="radio" name="payment" value="bank" checked>
+            โอนผ่านบัญชีธนาคาร
+        </label>
+
+        <label>
+            <input type="radio" name="payment" value="cod">
+            เก็บเงินปลายทาง
+        </label>
+    </div>
+
+    <div id="paymentDetail" class="payment-detail"></div>
+
+    <button class="confirm-btn" onclick="confirmPayment()">ยืนยันการชำระเงิน</button>
+
+</div>
+</section>
+
+
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>
