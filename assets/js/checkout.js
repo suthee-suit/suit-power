@@ -78,3 +78,4 @@ function confirmOrder() {
 
     window.location.href = "success.html";
 }
+
